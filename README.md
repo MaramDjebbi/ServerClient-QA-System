@@ -35,8 +35,8 @@ It also defines shared constants and macros between clients and servers, such as
 
 ## Handlers_Serv.h
 This file contains two signal management functions for the server:
-● hand_reveil(int sig): is a function that reacts to reception of the signal SIGUSR1. This function is used to signal to the server that a client wants to interact with it.
-● end_server(int sig): is a function which reacts to the reception of any what signal. It is designed to manage the termination of the server in reaction to the reception of any signal.
+- hand_reveil(int sig): is a function that reacts to the reception of the signal SIGUSR1. This function is used to signal to the server that a client wants to interact with it.
+- end_server(int sig): is a function that reacts to the reception of any what signal. It is designed to manage the termination of the server in reaction to the reception of any signal.
 
 ## Handlers_cli.h
 When the “SIGUSER1” signal is received, the function displays the message “Sending SIGUSER1" signal to standard output using printf. Additionally, this function
