@@ -51,3 +51,51 @@ This file contains a function designed to wake the client in response to receivi
 The "Makefile" is designed to compile client and server source code, create the `fifo` directory, provide targets to run the server and client in separate GNOME Terminal windows, and include a clean target to clean the generated files and directory. The `sleep` command in the "run_client" target introduces a 5-second delay after running the client program before closing the terminal window.
 
 ## How to Run the System
+
+To run the client-server communication system, follow these steps:
+- Open a terminal.
+- Navigate to the directory containing your source code and the Makefile.
+
+1. **Compile the Code:**
+   
+   - Compile the client and server programs by running the following command:
+
+     ```bash
+     make all
+     ```
+
+   This will compile the client and server executables and create the necessary `fifo` directory.
+
+2. **Start the Server:**
+   - To run the server, execute the following command:
+
+     ```bash
+     make run_server
+     ```
+
+   This will open a new GNOME Terminal window with the server running.
+
+3. **Start a Client:**
+   - To run a client, execute the following command:
+
+     ```bash
+     make run_client
+     ```
+
+   This will open a new GNOME Terminal window with the client running. The client will send a request to the server and wait for a response. After a 5-second delay, the terminal will close.
+
+4. **Interaction and Testing:**
+   - Observe the interaction between the client and server in their respective terminal windows.
+   - You can run multiple client instances to test the system's concurrent communication capabilities.
+
+5. **Clean Up:**
+   - To clean up the generated files and the `fifo` directory, use the following command:
+
+     ```bash
+     make clean
+     ```
+
+   This will remove the client and server executables, as well as the `fifo` directory.
+
+That's it! You now have the client-server system up and running, allowing communication between the server and clients via named pipes and SIGUSR1 signals.
+
